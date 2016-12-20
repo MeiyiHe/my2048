@@ -318,14 +318,14 @@ public class Gui2048 extends Application
           tile = tileArray[row][col];
           text = textArray[row][col];
 
-<<<<<<< HEAD
+
           //int index = (int)Math.sqrt(tileNum);
           int index = calculateIdx(tileNum);
           //(int)(log((double)tileNum))/(int)(log((double)2));
           System.out.println("index: " + index);
-=======
-          int index = (int)Math.sqrt(tileNum);
->>>>>>> 3f530dc553530eca375826cc4f211785a445288c
+
+          
+
           tile.setFill(colorArray[index]);
           updateTileText(text, tileNum);
         
@@ -336,7 +336,7 @@ public class Gui2048 extends Application
       }
     }
 
-<<<<<<< HEAD
+
     private int calculateIdx(int num){
 
       int count = 0;
@@ -348,8 +348,8 @@ public class Gui2048 extends Application
       return count;
     }
 
-=======
->>>>>>> 3f530dc553530eca375826cc4f211785a445288c
+
+
 
     /**
      * when game over, display game over messages
