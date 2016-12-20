@@ -318,7 +318,10 @@ public class Gui2048 extends Application
           tile = tileArray[row][col];
           text = textArray[row][col];
 
-          int index = (int)Math.sqrt(tileNum);
+          //int index = (int)Math.sqrt(tileNum);
+          int index = calculateIdx(tileNum);
+          //(int)(log((double)tileNum))/(int)(log((double)2));
+          System.out.println("index: " + index);
           tile.setFill(colorArray[index]);
           updateTileText(text, tileNum);
         
@@ -327,6 +330,17 @@ public class Gui2048 extends Application
 
         }
       }
+    }
+
+    private int calculateIdx(int num){
+
+      int count = 0;
+      while(num > 1){
+
+        num = num/2;
+        count++;
+      }
+      return count;
     }
 
 
