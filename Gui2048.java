@@ -401,7 +401,6 @@ public class Gui2048 extends Application
 
 
     /** DO NOT EDIT BELOW */
-
     // The method used to process the command line arguments
     private void processArgs(String[] args)
     {
