@@ -20,8 +20,11 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction 
-
+    
+    @IBAction func startGame(_ sender:UIButton){
+        
+        self.present(MainTabViewController(), animated: true, completion: nil)
+    }
 
 }
 

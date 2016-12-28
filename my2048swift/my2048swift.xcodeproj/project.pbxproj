@@ -14,6 +14,11 @@
 		2F8A95471E0B568F007162D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F8A95451E0B568F007162D5 /* LaunchScreen.storyboard */; };
 		2F8A95521E0B568F007162D5 /* my2048swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A95511E0B568F007162D5 /* my2048swiftTests.swift */; };
 		2F8A955D1E0B568F007162D5 /* my2048swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A955C1E0B568F007162D5 /* my2048swiftUITests.swift */; };
+		2F8A956C1E0C1A65007162D5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A956B1E0C1A65007162D5 /* MainViewController.swift */; };
+		2F8A956E1E0C1A98007162D5 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A956D1E0C1A98007162D5 /* SettingViewController.swift */; };
+		2F8A95711E0C1D26007162D5 /* MainTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8A95701E0C1D26007162D5 /* MainTabViewController.swift */; };
+		2F9593CB1E13868B004035FD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9593CA1E13868B004035FD /* GameModel.swift */; };
+		2FD566ED1E0F730E009A0039 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD566EC1E0F730E009A0039 /* TileView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,12 @@
 		2F8A95581E0B568F007162D5 /* my2048swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = my2048swiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F8A955C1E0B568F007162D5 /* my2048swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = my2048swiftUITests.swift; sourceTree = "<group>"; };
 		2F8A955E1E0B568F007162D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2F8A956A1E0B6812007162D5 /* 2048playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = 2048playground.playground; sourceTree = "<group>"; };
+		2F8A956B1E0C1A65007162D5 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = my2048swift/MainViewController.swift; sourceTree = "<group>"; };
+		2F8A956D1E0C1A98007162D5 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingViewController.swift; path = my2048swift/SettingViewController.swift; sourceTree = "<group>"; };
+		2F8A95701E0C1D26007162D5 /* MainTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabViewController.swift; sourceTree = "<group>"; };
+		2F9593CA1E13868B004035FD /* GameModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		2FD566EC1E0F730E009A0039 /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,10 @@
 		2F8A95301E0B568E007162D5 = {
 			isa = PBXGroup;
 			children = (
+				2F9593C91E13865B004035FD /* model */,
+				2FD566EB1E0F72AA009A0039 /* view */,
+				2F8A956F1E0C1CE8007162D5 /* controller */,
+				2F8A956A1E0B6812007162D5 /* 2048playground.playground */,
 				2F8A953B1E0B568E007162D5 /* my2048swift */,
 				2F8A95501E0B568F007162D5 /* my2048swiftTests */,
 				2F8A955B1E0B568F007162D5 /* my2048swiftUITests */,
@@ -123,6 +138,32 @@
 				2F8A955E1E0B568F007162D5 /* Info.plist */,
 			);
 			path = my2048swiftUITests;
+			sourceTree = "<group>";
+		};
+		2F8A956F1E0C1CE8007162D5 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				2F8A956D1E0C1A98007162D5 /* SettingViewController.swift */,
+				2F8A956B1E0C1A65007162D5 /* MainViewController.swift */,
+				2F8A95701E0C1D26007162D5 /* MainTabViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		2F9593C91E13865B004035FD /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2F9593CA1E13868B004035FD /* GameModel.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		2FD566EB1E0F72AA009A0039 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				2FD566EC1E0F730E009A0039 /* TileView.swift */,
+			);
+			name = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +300,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F8A95711E0C1D26007162D5 /* MainTabViewController.swift in Sources */,
+				2F8A956C1E0C1A65007162D5 /* MainViewController.swift in Sources */,
 				2F8A953F1E0B568F007162D5 /* ViewController.swift in Sources */,
 				2F8A953D1E0B568F007162D5 /* AppDelegate.swift in Sources */,
+				2FD566ED1E0F730E009A0039 /* TileView.swift in Sources */,
+				2F9593CB1E13868B004035FD /* GameModel.swift in Sources */,
+				2F8A956E1E0C1A98007162D5 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,6 +551,7 @@
 				2F8A95631E0B568F007162D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F8A95641E0B568F007162D5 /* Build configuration list for PBXNativeTarget "my2048swiftTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +560,7 @@
 				2F8A95661E0B568F007162D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F8A95671E0B568F007162D5 /* Build configuration list for PBXNativeTarget "my2048swiftUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +569,7 @@
 				2F8A95691E0B568F007162D5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
