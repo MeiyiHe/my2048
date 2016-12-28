@@ -12,7 +12,7 @@ import UIKit
 
 class MainViewController: UIViewController{
 
-    var dimension:Int = 3
+    var dimension:Int = 4
     var maxNumber:Int = 2048
     
     // width per grid
@@ -23,6 +23,11 @@ class MainViewController: UIViewController{
     // declare a background array
     var backgrounds: Array<UIView>
     
+    // get the game model
+    var model: GameModel
+    
+    var tiles = Array(repeating: Array(repeating: 0, count: 4), count: 4)
+    
     /*
      * Game initialization
      */
@@ -30,6 +35,8 @@ class MainViewController: UIViewController{
         // background array initialization
         self.backgrounds = Array<UIView>()
 
+        // game model initialization
+        self.model = GameModel(dimension: self.dimension, tiles:tiles)
         super.init( nibName:nil, bundle:nil )
     }
     
@@ -41,7 +48,13 @@ class MainViewController: UIViewController{
         super.viewDidLoad()
         // show background grid
         setupBackground()
-        randomNumber()
+        //randomNumber()
+        
+        for i in 0...16{
+            print(i)
+            randomNumber()
+        }
+        
     }
 
     func setupBackground(){
@@ -49,10 +62,10 @@ class MainViewController: UIViewController{
         var x:CGFloat = 30
         var y:CGFloat = 150
         
-        for _ in 0 ... dimension{
+        for _ in 0 ... 3{
             y = 150
             
-            for _ in 0 ... dimension{
+            for _ in 0 ... 3{
                 
                 let  background = UIView(frame: CGRect( x: x, y: y,width: width, height: width))
                 background.backgroundColor = UIColor.darkGray
@@ -72,7 +85,7 @@ class MainViewController: UIViewController{
     func randomNumber(){
         
         let random = Int(arc4random_uniform(10))
-          print(random)
+          //print(random)
         
         
         var seed:Int = 2
@@ -83,7 +96,26 @@ class MainViewController: UIViewController{
         let col = Int(arc4random_uniform(UInt32(dimension)))
         let row = Int(arc4random_uniform(UInt32(dimension)))
         
+        // first check if it is full
+        if( model.checkFull() == true){
+            print("the grid is full, Game Over!")
+            return
+        }
+        
+        
+        // generate a new number while checking if that position has been occupied or not
+        if(model.setPosition(row:row, col: col, value: seed) == false){
+            randomNumber()
+            return
+            
+        }
+        
+        print("row random-->", row)
+        print("col random-->", col)
+        print("value random-->", random)
+        tiles[row][col] = seed
         insertTile(pos: (row,col), value: seed)
+        
     }
     
     
