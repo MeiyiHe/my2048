@@ -322,7 +322,7 @@ public class Gui2048 extends Application
           //int index = (int)Math.sqrt(tileNum);
           int index = calculateIdx(tileNum);
           //(int)(log((double)tileNum))/(int)(log((double)2));
-          System.out.println("index: " + index);
+          // System.out.println("index: " + index);
 
           
 
